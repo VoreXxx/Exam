@@ -8,11 +8,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Collection;
-import java.util.Set;
-
 import static com.example.Exam.Constants.FULL_QUESTION1;
 import static com.example.Exam.Constants.TEST_QUESTION_SET2;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -29,8 +27,5 @@ public class ExaminerServiceImplTest {
         when(mock.getSize()).thenReturn(1);
         when(mock.getRandomQuestion()).thenReturn(FULL_QUESTION1);
         assertEquals(TEST_QUESTION_SET2, out.getQuestions(1));
-    }
-
-    private void assertEquals(Set<Question> testQuestionSet2, Collection<Question> questions) {
     }
 }
